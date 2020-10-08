@@ -1,4 +1,4 @@
-  <Project Sdk="Microsoft.NET.Sdk">
+﻿  <Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -14,4 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Meowv.Blog.Application\Meowv.Blog.Application.csproj" />
   </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DocumentationFile>..\Meowv.Blog.Web\Meowv.Blog.HttpApi.xml</DocumentationFile>
+    </PropertyGroup>
 </Project>

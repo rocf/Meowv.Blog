@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Meowv.Blog.Swagger;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
@@ -10,7 +11,8 @@ namespace Meowv.Blog.Web
     [DependsOn(
         typeof(AbpAspNetCoreMvcModule),
         typeof(AbpAutofacModule),
-        typeof(MeowvBlogHttpApiModule)
+        typeof(MeowvBlogHttpApiModule),
+        typeof(MeowvBlogSwaggerModule)
         )]
     public class MeowvBlogHttpApiHostingModule: AbpModule
     {
