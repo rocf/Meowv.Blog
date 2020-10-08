@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Meowv.Blog.Configurations;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.EntityFrameworkCore;
@@ -10,13 +13,31 @@ namespace Meowv.Blog
     [DependsOn(
         typeof(MeowvBlogDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
-        typeof(AbpEntityFrameworkCoreSqlServerModule)
+        typeof(AbpEntityFrameworkCoreSqlServerModule),
+        typeof(MeowvBlogDbContext)
         )]
-    public class MeowvBlogFrameworkCoreModule: AbpModule
+    public class MeowvBlogFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            base.ConfigureServices(context);
+            context.Services.AddAbpDbContext<MeowvBlogDbContext>(options =>
+            {
+                options.AddDefaultRepositories(includeAllEntities: true);
+            });
+
+            Configure<AbpDbContextOptions>(options =>
+            {
+                switch (AppSettings.EnableDb)
+                {
+                    
+                    case "SqlServer":
+                        options.UseSqlServer();
+                        break;
+                    default:
+                        options.UseSqlServer();
+                        break;
+                }
+            });
         }
     }
 }
