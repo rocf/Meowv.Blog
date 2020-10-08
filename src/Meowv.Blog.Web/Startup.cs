@@ -7,7 +7,7 @@ namespace Meowv.Blog.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplication<BlogWebModule>();
+            services.AddApplication<MeowvBlogHttpApiHostingModule>();
         }
 
         public void Configure(IApplicationBuilder app)
