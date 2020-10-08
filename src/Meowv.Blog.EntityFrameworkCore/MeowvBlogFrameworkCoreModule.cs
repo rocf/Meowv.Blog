@@ -13,8 +13,7 @@ namespace Meowv.Blog
     [DependsOn(
         typeof(MeowvBlogDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
-        typeof(AbpEntityFrameworkCoreSqlServerModule),
-        typeof(MeowvBlogDbContext)
+        typeof(AbpEntityFrameworkCoreSqlServerModule)
         )]
     public class MeowvBlogFrameworkCoreModule : AbpModule
     {

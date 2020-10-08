@@ -4,5 +4,12 @@
         <name>Meowv.Blog.HttpApi</name>
     </assembly>
     <members>
+        <member name="M:Meowv.Blog.Controllers.BlogController.InsertPostAsync(Meowv.Blog.Blog.PostDto)">
+            <summary>
+            添加博客
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

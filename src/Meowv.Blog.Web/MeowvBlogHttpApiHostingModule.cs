@@ -12,7 +12,9 @@ namespace Meowv.Blog.Web
         typeof(AbpAspNetCoreMvcModule),
         typeof(AbpAutofacModule),
         typeof(MeowvBlogHttpApiModule),
-        typeof(MeowvBlogSwaggerModule)
+        typeof(MeowvBlogSwaggerModule),
+        typeof(MeowvBlogFrameworkCoreModule)
+
         )]
     public class MeowvBlogHttpApiHostingModule: AbpModule
     {
