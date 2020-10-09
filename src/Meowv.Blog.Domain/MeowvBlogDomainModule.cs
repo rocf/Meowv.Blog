@@ -3,7 +3,10 @@ using Volo.Abp.Modularity;
 
 namespace Meowv.Blog
 {
-    [DependsOn(typeof(AbpIdentityDomainModule))]
+    [DependsOn(
+        typeof(AbpIdentityDomainModule),
+        typeof(MeowvBlogDomainSharedModule)
+        )]
     public class MeowvBlogDomainModule : AbpModule
     {
 
