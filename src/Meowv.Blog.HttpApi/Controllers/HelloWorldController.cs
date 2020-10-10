@@ -25,5 +25,12 @@ namespace Meowv.Blog.Controllers
         {
             return _helloWorldService.HelloWorld();
         }
+
+        [HttpGet]
+        [Route("Exception")]
+        public string Exception()
+        {
+            throw new NotImplementedException("这是一个未实现的异常接口");
+        }
     }
 }
