@@ -1,4 +1,6 @@
-﻿using Meowv.Blog.Configurations;
+﻿using Meowv.Blog.BackgroundJobs;
+using Meowv.Blog.BackgroundJobs.Jobs;
+using Meowv.Blog.Configurations;
 using Meowv.Blog.Swagger;
 using Meowv.Blog.ToolKits.Base;
 using Meowv.Blog.ToolKits.Extensions;
@@ -25,7 +27,8 @@ namespace Meowv.Blog.Web
         typeof(AbpAutofacModule),
         typeof(MeowvBlogHttpApiModule),
         typeof(MeowvBlogSwaggerModule),
-        typeof(MeowvBlogFrameworkCoreModule)
+        typeof(MeowvBlogFrameworkCoreModule),
+        typeof(MeowvBlogBackgroundJobsModule)
 
         )]
     public class MeowvBlogHttpApiHostingModule: AbpModule
@@ -87,6 +90,8 @@ namespace Meowv.Blog.Web
 
             // Http请求
             context.Services.AddHttpClient();
+
+            //context.Services.AddTransient<IHostedService, HelloWorldJob>();
 
         }
 
