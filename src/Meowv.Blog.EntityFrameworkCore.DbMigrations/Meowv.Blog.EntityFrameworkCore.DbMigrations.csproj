@@ -10,6 +10,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20201008162016_Initial.cs" />
     <Compile Remove="Migrations\20201008162016_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201010082504_Wallpapers.cs" />
+    <Compile Remove="Migrations\20201010082504_Wallpapers.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

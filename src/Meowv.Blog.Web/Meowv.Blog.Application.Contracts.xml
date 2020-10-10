@@ -39,5 +39,61 @@
             创建时间
             </summary>
         </member>
+        <member name="T:Meowv.Blog.PagingInput">
+            <summary>
+            分页输入参数
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.PagingInput.Page">
+            <summary>
+            页码
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.PagingInput.Limit">
+            <summary>
+            限制条数
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.Params.BulkInsertWallpaperInput.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.Params.BulkInsertWallpaperInput.Wallpapers">
+            <summary>
+            壁纸列表
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.Params.QueryWallpapersInput.Type">
+            <summary>
+            类型
+            <see cref="!:WallpaperEnum"/>
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.Params.QueryWallpapersInput.Keywords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.WallpaperDto.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.WallpaperDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.WallpaperJobItem`1.Result">
+            <summary>
+            <see cref="P:Meowv.Blog.Wallpaper.WallpaperJobItem`1.Result"/>
+            </summary>
+        </member>
+        <member name="P:Meowv.Blog.Wallpaper.WallpaperJobItem`1.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
     </members>
 </doc>

@@ -11,7 +11,10 @@ using Volo.Abp.Modularity;
 
 namespace Meowv.Blog.BackgroundJobs
 {
-    [DependsOn(typeof(AbpBackgroundJobsHangfireModule))]
+    [DependsOn(
+        typeof(AbpBackgroundJobsHangfireModule),
+        typeof(MeowvBlogApplicationContractsModule)
+        )]
     public class MeowvBlogBackgroundJobsModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -59,6 +62,7 @@ namespace Meowv.Blog.BackgroundJobs
             var service = context.ServiceProvider;
 
             service.UseHangfireTest();
+            service.UseWallpaperJob();
         }
     }
 }

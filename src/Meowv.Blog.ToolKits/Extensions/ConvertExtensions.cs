@@ -190,7 +190,7 @@ namespace Meowv.Blog.ToolKits.Extensions
         /// <returns></returns>
         public static T TryToEnum<T>(this string str, T t = default) where T : struct
         {
-            return Enum.TryParse<T>(str, out var result) ? result : t;
+            return System.Enum.TryParse<T>(str, out var result) ? result : t;
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Meowv.Blog.ToolKits.Extensions
         {
             var result = new List<EnumResponse>();
 
-            foreach (var item in Enum.GetValues(type))
+            foreach (var item in System.Enum.GetValues(type))
             {
                 var response = new EnumResponse
                 {

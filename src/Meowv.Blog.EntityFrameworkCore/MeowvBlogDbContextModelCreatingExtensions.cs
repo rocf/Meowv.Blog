@@ -58,6 +58,17 @@ namespace Meowv.Blog
                 b.Property(x => x.Title).HasMaxLength(20).IsRequired();
                 b.Property(x => x.LinkUrl).HasMaxLength(100).IsRequired();
             });
+
+            builder.Entity<Meowv.Blog.Wallpaper.Wallpaper>(b =>
+            {
+                b.ToTable(MeowvBlogConsts.DbTablePrefix + DbTableName.Wallpapers);
+                b.HasKey(x => x.Id);
+                b.Property(x => x.Id).ValueGeneratedOnAdd();
+                b.Property(x => x.Url).HasMaxLength(200).IsRequired();
+                b.Property(x => x.Title).HasMaxLength(100).IsRequired();
+                b.Property(x => x.Type).HasColumnType("int").IsRequired();
+                b.Property(x => x.CreateTime).HasColumnType("datetime").IsRequired();
+            });
         }
     }
 }

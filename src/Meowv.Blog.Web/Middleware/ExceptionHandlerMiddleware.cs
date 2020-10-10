@@ -41,7 +41,7 @@ namespace Meowv.Blog.Web.Middleware
                 var statusCode = context.Response.StatusCode;
                 if (statusCode != StatusCodes.Status200OK)
                 {
-                    Enum.TryParse(typeof(HttpStatusCode), statusCode.ToString(), out object message);
+                    System.Enum.TryParse(typeof(HttpStatusCode), statusCode.ToString(), out object message);
                     await ExceptionHandlerAsync(context, message.ToString());
                 }
             }

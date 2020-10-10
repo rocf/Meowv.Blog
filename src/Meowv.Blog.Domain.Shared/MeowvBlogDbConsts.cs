@@ -17,6 +17,8 @@ namespace Meowv.Blog
             public const string PostTags = "Post_Tags";
 
             public const string Friendlinks = "Friendlinks";
+
+            public const string Wallpapers = "Wallpapers";
         }
     }
 }
