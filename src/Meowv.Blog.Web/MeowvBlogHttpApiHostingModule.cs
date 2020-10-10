@@ -8,6 +8,7 @@ using Meowv.Blog.Web.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -93,6 +94,16 @@ namespace Meowv.Blog.Web
 
             //context.Services.AddTransient<IHostedService, HelloWorldJob>();
 
+            context.Services.AddRouting(options =>
+            {
+                // 设置URL为小写
+                options.LowercaseUrls = true;
+                // 在生成的URL后面添加斜杠
+                options.AppendTrailingSlash = true;
+            });
+
+
+
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -116,6 +127,15 @@ namespace Meowv.Blog.Web
 
             // 认证授权
             app.UseAuthorization();
+
+            app.UseHsts();
+            app.UseCors();
+            app.UseHttpsRedirection();
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             // 路由映射
             app.UseEndpoints(endpoints =>
