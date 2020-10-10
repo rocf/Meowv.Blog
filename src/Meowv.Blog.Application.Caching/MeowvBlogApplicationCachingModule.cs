@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Meowv.Blog.Configurations;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Caching;
@@ -14,7 +16,12 @@ namespace Meowv.Blog.Application.Caching
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            base.ConfigureServices(context);
+            context.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = AppSettings.Caching.RedisConnectionString;
+                //options.InstanceName
+                //options.ConfigurationOptions
+            });
         }
     }
 }
